@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="安卓官方为什么要提供支持包？  向后兼容 提供不适合打包进framework的功能 为了支持不同形态的设备   v4、v7、v13与安卓版本的关系      版本 级别     android1.6 4   android2.1 7   android2.3 9   andorid3.2 13     v4 Support Libraries 官方在Support Library的第24.2.0">
+<meta name="description" content="安卓官方为什么要提供支持包？ 向后兼容 提供不适合打包进framework的功能 为了支持不同形态的设备  v4、v7、v13与安卓版本的关系   版本 级别     android1.6 4   android2.1 7   android2.3 9   andorid3.2 13    v4 Support Libraries 官方在Support Library的第24.2.0版本（２０１6">
 <meta name="keywords" content="android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android support library关系详解">
 <meta property="og:url" content="http://yoursite.com/2017/04/18/android support library关系详解/index.html">
 <meta property="og:site_name" content="Uriboyka's Blog">
-<meta property="og:description" content="安卓官方为什么要提供支持包？  向后兼容 提供不适合打包进framework的功能 为了支持不同形态的设备   v4、v7、v13与安卓版本的关系      版本 级别     android1.6 4   android2.1 7   android2.3 9   andorid3.2 13     v4 Support Libraries 官方在Support Library的第24.2.0">
-<meta property="og:updated_time" content="2017-04-19T15:19:10.572Z">
+<meta property="og:description" content="安卓官方为什么要提供支持包？ 向后兼容 提供不适合打包进framework的功能 为了支持不同形态的设备  v4、v7、v13与安卓版本的关系   版本 级别     android1.6 4   android2.1 7   android2.3 9   andorid3.2 13    v4 Support Libraries 官方在Support Library的第24.2.0版本（２０１6">
+<meta property="og:updated_time" content="2017-04-19T15:52:35.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android support library关系详解">
-<meta name="twitter:description" content="安卓官方为什么要提供支持包？  向后兼容 提供不适合打包进framework的功能 为了支持不同形态的设备   v4、v7、v13与安卓版本的关系      版本 级别     android1.6 4   android2.1 7   android2.3 9   andorid3.2 13     v4 Support Libraries 官方在Support Library的第24.2.0">
+<meta name="twitter:description" content="安卓官方为什么要提供支持包？ 向后兼容 提供不适合打包进framework的功能 为了支持不同形态的设备  v4、v7、v13与安卓版本的关系   版本 级别     android1.6 4   android2.1 7   android2.3 9   andorid3.2 13    v4 Support Libraries 官方在Support Library的第24.2.0版本（２０１6">
 
 
 
@@ -354,18 +354,12 @@
       
 
       
-        <ol>
-<li><p>安卓官方为什么要提供支持包？</p>
-<ol>
+        <h3 id="安卓官方为什么要提供支持包？"><a href="#安卓官方为什么要提供支持包？" class="headerlink" title="安卓官方为什么要提供支持包？"></a>安卓官方为什么要提供支持包？</h3><ol>
 <li>向后兼容</li>
 <li>提供不适合打包进framework的功能</li>
 <li>为了支持不同形态的设备</li>
 </ol>
-</li>
-<li><p>v4、v7、v13与安卓版本的关系</p>
-</li>
-</ol>
-<table>
+<h3 id="v4、v7、v13与安卓版本的关系"><a href="#v4、v7、v13与安卓版本的关系" class="headerlink" title="v4、v7、v13与安卓版本的关系"></a>v4、v7、v13与安卓版本的关系</h3><table>
 <thead>
 <tr>
 <th>版本</th>
@@ -391,46 +385,34 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li>v4 Support Libraries<blockquote>
-<p>官方在Support Library的第24.2.0版本（２０１6年8月发布）的时候移除了对Android 2.2 (API level 8)及其以下版本的支持，但是名字依然是v4。<br>Gradle编译脚本中整个v4库的依赖语句如下<code>compile &#39;com.android.support:support-v4:24.2.1&#39;</code><br>gradle中jar依赖语句格式如 <strong>compile ‘jar文件组（group/命名空间）:jar文件名（name）:jar文件版本（version）’</strong></p>
-</blockquote>
+<h3 id="v4-Support-Libraries"><a href="#v4-Support-Libraries" class="headerlink" title="v4 Support Libraries"></a>v4 Support Libraries</h3><ul>
+<li><p>官方在Support Library的第24.2.0版本（２０１6年8月发布）的时候移除了对Android 2.2 (API level 8)及其以下版本的支持，但是名字依然是v4。</p>
 </li>
-</ol>
-<ol>
-<li><p>v7 Support Libraries</p>
-<blockquote>
-<p>需要注意的24.2.0版本以后的v7支持库支持范围也是Android 2.3 (API level 9)及其以上版本了<br><a href="https://developer.android.com/topic/libraries/support-library/revisions.html" target="_blank" rel="external">怎么查看Support Library最新版本</a>？<br>v7 appcompat library：支持UI设计样式、 material design相关，如ActionBar、AppCompatActivity、Theme等。</p>
-</blockquote>
+<li><p>Gradle编译脚本中整个v4库的依赖语句如下<code>compile &#39;com.android.support:support-v4:24.2.1&#39;</code></p>
 </li>
-<li><p>ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile &apos;com.android.support.constraint:constraint-layout:1.0.0-alpha&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
+<li>gradle中jar依赖语句格式如 <strong>compile ‘jar文件组（group/命名空间）:jar文件名（name）:jar文件版本（version）’</strong></li>
+</ul>
+<h3 id="v7-Support-Libraries"><a href="#v7-Support-Libraries" class="headerlink" title="v7 Support Libraries"></a>v7 Support Libraries</h3><ul>
+<li>需要注意的24.2.0版本以后的v7支持库支持范围也是Android 2.3 (API level 9)及其以上版本了</li>
+<li><a href="https://developer.android.com/topic/libraries/support-library/revisions.html" target="_blank" rel="external">怎么查看Support Library最新版本</a>？</li>
+<li>v7 appcompat library：支持UI设计样式、 material design相关，如ActionBar、AppCompatActivity、Theme等。</li>
+</ul>
+<h3 id="ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用"><a href="#ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用" class="headerlink" title="ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用:"></a>ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile &apos;com.android.support.constraint:constraint-layout:1.0.0-alpha&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
 <li><a href="http://stackoverflow.com/questions/39534070/how-can-i-get-the-latest-version-of-constraintlayout-for-android" target="_blank" rel="external">怎么查看constraint-layout的最新版本</a>？</li>
-</ol>
-</li>
-<li><p>Design Support Library:<br> 这个库现在使用的也比较多，它提供了material design设计风格的控件。如，navigation drawers、floating action buttons (FAB)、snackbars、tabs等。</p>
-</li>
-<li><p><code>com.android.support:design:25.3.1</code><a href="http://blog.csdn.net/zhangquanit/article/details/54291374" target="_blank" rel="external">依赖关系</a>：</p>
-<ol>
-<li><code>com.android.support:appcompat-v7:25.3.1</code><ol>
-<li><code>com.android.support:support-v4:25.3.1</code></li>
-</ol>
-</li>
-<li><code>com.android.support:support-v4:25.3.1</code><ol>
-<li><code>com.android.support:support-compat:25.3.1</code></li>
-<li><code>com.android.support:support-media-compat:25.3.1</code></li>
-<li><code>com.android.support:support-core-utils:25.3.1</code></li>
-<li><code>com.android.support:support-core-ui:25.3.1</code></li>
-<li><code>com.android.support:support-fragment:25.3.1</code></li>
-</ol>
-</li>
-<li><code>com.android.support:recyclerview-v7:25.3.1</code></li>
-<li><code>com.android.support:transition:25.3.1</code></li>
-</ol>
-</li>
-</ol>
-
+</ul>
+<h3 id="Design-Support-Library"><a href="#Design-Support-Library" class="headerlink" title="Design Support Library:"></a>Design Support Library:</h3><pre><code>这个库现在使用的也比较多，它提供了material design设计风格的控件。如，navigation drawers、floating action buttons (FAB)、snackbars、tabs等。
+</code></pre><h3 id="com-android-support-design-25-3-1依赖关系："><a href="#com-android-support-design-25-3-1依赖关系：" class="headerlink" title="com.android.support:design:25.3.1依赖关系："></a><code>com.android.support:design:25.3.1</code><a href="http://blog.csdn.net/zhangquanit/article/details/54291374" target="_blank" rel="external">依赖关系</a>：</h3><pre><code>1. `com.android.support:appcompat-v7:25.3.1`
+    1. `com.android.support:support-v4:25.3.1`
+2. `com.android.support:support-v4:25.3.1`
+    1. `com.android.support:support-compat:25.3.1`
+    2. `com.android.support:support-media-compat:25.3.1`
+    3. `com.android.support:support-core-utils:25.3.1`
+    4. `com.android.support:support-core-ui:25.3.1`
+    5. `com.android.support:support-fragment:25.3.1`
+3. `com.android.support:recyclerview-v7:25.3.1`
+4. `com.android.support:transition:25.3.1`
+</code></pre>
       
     </div>
 
@@ -531,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/7982425"
@@ -594,6 +585,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安卓官方为什么要提供支持包？"><span class="nav-number">1.</span> <span class="nav-text">安卓官方为什么要提供支持包？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v4、v7、v13与安卓版本的关系"><span class="nav-number">2.</span> <span class="nav-text">v4、v7、v13与安卓版本的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v4-Support-Libraries"><span class="nav-number">3.</span> <span class="nav-text">v4 Support Libraries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v7-Support-Libraries"><span class="nav-number">4.</span> <span class="nav-text">v7 Support Libraries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用"><span class="nav-number">5.</span> <span class="nav-text">ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Design-Support-Library"><span class="nav-number">6.</span> <span class="nav-text">Design Support Library:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#com-android-support-design-25-3-1依赖关系："><span class="nav-number">7.</span> <span class="nav-text">com.android.support:design:25.3.1依赖关系：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
