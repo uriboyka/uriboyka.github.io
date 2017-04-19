@@ -1,0 +1,793 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="tomcat," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="tomcat目录 webapps：tomcat默认部署路径。 wtpwebapps： eclipse默认部署路径。 两者同时存在，运行bin中的startup.bat,运行wtpwebapps中部署的项目。  conf目录 server.xml：tomcat的主配置文件。 context.xml：所有host的默认配置信息。 web.xml：为所有tomcat内的web应用程序提供默认配置信息。">
+<meta name="keywords" content="tomcat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tomcat笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/tomcat笔记/index.html">
+<meta property="og:site_name" content="Uriboyka's Blog">
+<meta property="og:description" content="tomcat目录 webapps：tomcat默认部署路径。 wtpwebapps： eclipse默认部署路径。 两者同时存在，运行bin中的startup.bat,运行wtpwebapps中部署的项目。  conf目录 server.xml：tomcat的主配置文件。 context.xml：所有host的默认配置信息。 web.xml：为所有tomcat内的web应用程序提供默认配置信息。">
+<meta property="og:updated_time" content="2017-04-19T12:41:49.841Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tomcat笔记">
+<meta name="twitter:description" content="tomcat目录 webapps：tomcat默认部署路径。 wtpwebapps： eclipse默认部署路径。 两者同时存在，运行bin中的startup.bat,运行wtpwebapps中部署的项目。  conf目录 server.xml：tomcat的主配置文件。 context.xml：所有host的默认配置信息。 web.xml：为所有tomcat内的web应用程序提供默认配置信息。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/12/tomcat笔记/"/>
+
+
+
+
+
+  <title> tomcat笔记 | Uriboyka's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uriboyka's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/tomcat笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="uriboyka">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7982425">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uriboyka's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                tomcat笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T21:23:21+08:00">
+                2017-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tomcat相关/" itemprop="url" rel="index">
+                    <span itemprop="name">tomcat相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="tomcat目录"><a href="#tomcat目录" class="headerlink" title="tomcat目录"></a>tomcat目录</h3><ol>
+<li>webapps：tomcat默认部署路径。</li>
+<li>wtpwebapps： eclipse默认部署路径。</li>
+<li>两者同时存在，运行bin中的startup.bat,运行wtpwebapps中部署的项目。</li>
+</ol>
+<h3 id="conf目录"><a href="#conf目录" class="headerlink" title="conf目录"></a>conf目录</h3><ol>
+<li>server.xml：tomcat的主配置文件。</li>
+<li>context.xml：所有host的默认配置信息。</li>
+<li>web.xml：为所有tomcat内的web应用程序提供默认配置信息。</li>
+<li>tomcat-users.xml：tomcat的角色配置文件。</li>
+</ol>
+<h3 id="server-xml配置"><a href="#server-xml配置" class="headerlink" title="server.xml配置"></a>server.xml配置</h3><ol>
+<li>顶层元素<server>: port–指定一个端口，这个端口负责监听关闭tomcat的请求。</server></li>
+<li>顶层元素<service>: name–指定service的名字。</service></li>
+<li>连接器类元素<connector>: port–指定服务器要监听的端口，并在这个端口监听来自客户端的请求。</connector></li>
+<li>容器类元素<context>: 代表运行在虚拟主机上的单个web应用:<blockquote>
+<p><code>&lt;Context path=&quot;bbs&quot; docBase=&quot;bbs&quot; debug=&quot;0&quot; reloadable=&quot;true&quot;/&gt;</code></p>
+<ol>
+<li>path:指定访问该Web应用的URL入口.</li>
+<li>docBase:指定Web应用的文件路径，可以给定绝对路径，也可以给定相对于<host>的appBase属性的相对路径，如果Web应用采用开放目录结构，则指定Web应用的根目录，如果Web应用是个war文件，则指定war文件的路径。</host></li>
+<li>reloadable:如果这个属性设为true，tomcat服务器在运行状态下会监视在WEB-INF/classes和WEB-INF/lib目录下class文件的改动，如果监测到有class文件被更新的，服务器会自动重新加载Web应用。</li>
+</ol>
+</blockquote>
+</context></li>
+</ol>
+<h3 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h3><ul>
+<li>tomcat config 目录下的web.xml为服务器全局作用域，一般用来配置全局设置；</li>
+<li>java项目中WEB-INF目录下的web.xml为局部作用域。</li>
+</ul>
+<h3 id="Web应用的目录结构"><a href="#Web应用的目录结构" class="headerlink" title="Web应用的目录结构"></a>Web应用的目录结构</h3><ul>
+<li>假设在$CATALINA_HOME/webapps下有helloapp的web应用。</li>
+<li>/helloapp：Web应用的根目录，所有的jsp文件和html文件都在此目录下</li>
+<li>/helloapp/WEB_INF：存放该web应用发布时的描述文件web.xml</li>
+<li>/helloapp/WEB_INF/class：存放各种class文件，Servlet文件也存放于此目录下</li>
+<li>/helloapp/WEB_INF/lib：存放各钟Web应用所需要的jar文件。比如可以存放JDBC驱动程序的JAR文件</li>
+</ul>
+<h3 id="tomcat8管理页面配置"><a href="#tomcat8管理页面配置" class="headerlink" title="tomcat8管理页面配置"></a>tomcat8管理页面配置</h3><ul>
+<li><p>修改tomcat-users.xml如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;role rolename=&quot;manager&quot;/&gt;</div><div class="line">&lt;role rolename=&quot;manager-gui&quot;/&gt;</div><div class="line">&lt;role rolename=&quot;admin&quot;/&gt;</div><div class="line">&lt;user username=&quot;user&quot; password=&quot;password&quot; roles=&quot;admin,manager,manager-gui&quot;/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>同时还要修改conf/Catalina/localhost/manager.xml 内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Context privileged=&quot;true&quot; antiResourceLocking=&quot;false&quot;</div><div class="line">         docBase=&quot;$&#123;catalina.home&#125;/webapps/manager&quot;&gt;</div><div class="line">    &lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot; allow=&quot;^.*$&quot; /&gt;</div><div class="line">&lt;/Context&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="tomcat项目部署的三种方式"><a href="#tomcat项目部署的三种方式" class="headerlink" title="tomcat项目部署的三种方式"></a>tomcat项目部署的三种方式</h3><ol>
+<li>将 Web 项目文件【同样也可以复制生成的war】拷贝到Webapps目录中。</li>
+<li>在Tomcat中的Conf目录中，在Server.Xml中的，<host>节点中添加：<br><code>&lt;Context Path=&quot;/Hello&quot;Docbase=&quot;D:\Users\WebProject\WebContent&quot; Debug=&quot;0&quot; Privileged=&quot;True&quot; Reloadable=&quot;True&quot;&gt;&lt;/Context&gt;</code></host></li>
+<li>创建一个Context文件,在conf目录中，新建 Catalina＼localhost目录，在该目录中新建一个xml文件，名字不可以随意取，要和path后的那个名字一致，按照下边这个path的配置，xml的名字应该就应该是hello（hello.xml），该xml文件的内容为：<br><code>&lt;Context path=&quot;/hello&quot; docBase=&quot;E:\workspace\hello\WebRoot&quot; debug=&quot;0&quot; privileged=&quot;true&quot;&gt;&lt;/Context&gt;</code></li>
+</ol>
+<h3 id="tomcat启动脚本"><a href="#tomcat启动脚本" class="headerlink" title="tomcat启动脚本"></a>tomcat启动脚本</h3><ol>
+<li>startup.bat 是tomcat的启动选项。</li>
+<li>catalina.bat 是tomcat的配置项，里面可以对tomcat的虚拟内存的大小等，startup.bat最后调用 catalina.bat run。</li>
+<li>CATALINA_HOME和CATALINA_BASE概念是为了解决这样的场景：<blockquote>
+<p>你需要在一台机器上面部署多个Tomcat实例，但是你又不想创建多个Tomcat的副本，换句话说就是让这些Tomcat副本拥有自己的工作目录但是共享Tomcat的代码。<br><strong>catalina.home(安装目录)</strong>：指向公用信息的位置，就是bin和lib的父目录。<br><strong>catalina.base(工作目录)</strong>：指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="Idea与Tomcat的配置"><a href="#Idea与Tomcat的配置" class="headerlink" title="Idea与Tomcat的配置"></a>Idea与Tomcat的配置</h3><h5 id="一、先说一下与Tomcat相关的两个配置："><a href="#一、先说一下与Tomcat相关的两个配置：" class="headerlink" title="一、先说一下与Tomcat相关的两个配置："></a>一、先说一下与Tomcat相关的两个配置：</h5><ol>
+<li><p>配置默认端口<br>在tomcat安装目录的conf目录下的server.xml文件中，以下内容中的port属性指定了默认端口：<br><code>&lt;Connector connectionTimeout=&quot;20000&quot; port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot; redirectPort=&quot;8443&quot;/&gt;</code></p>
+</li>
+<li><p>将url与web程序目录绑定<br>默认的根目录是tomcat7\webapps\ROOT，我们可以在conf\server.xml文件Host标签中指定根目录和其他目录，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> &lt;Host appBase=&quot;webapps&quot; autoDeploy=&quot;true&quot; name=&quot;localhost&quot; unpackWARs=&quot;true&quot;&gt;</div><div class="line">        &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; prefix=&quot;localhost_access_log.&quot; suffix=&quot;.txt&quot;/&gt;</div><div class="line"></div><div class="line">        &lt;Context docBase=&quot;F:\aaa&quot; path=&quot;/aaa&quot; reloadable=&quot;true&quot;/&gt;</div><div class="line">        &lt;Context docBase=&quot;F:\bbb&quot; path=&quot;/bbb&quot; debug=&quot;0&quot;</div><div class="line">reloadable=&quot;true&quot; crossContext=&quot;true&quot; /&gt;</div><div class="line">      &lt;/Host&gt;</div></pre></td></tr></table></figure>
+<p><strong>根据上面的配置，我们访问 <a href="http://127.0.0.1/aaa" target="_blank" rel="external">http://127.0.0.1/aaa</a> 时候，使用F:\aaa目录中的web程序，bbb同理。根路径不变。</strong></p>
+<p><em>在Tomcat默认安装后，tomcat的主目录是webapps/root目录，所以如果想改变tomcat的主目录的话可以如下所做:</em></p>
+<blockquote>
+<p><strong>方法一</strong>：<br>打开C:/Tomcat/conf/server.xml，在<host></host>之间加入下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Context docBase=&quot;d:/Tomcat 5.5/webapps/medi&quot; path=&quot;&quot; debug=&quot;0&quot;  reloadable=&quot;true&quot;/&gt;</div></pre></td></tr></table></figure>
+<p><strong>方法二</strong>：<br>将tomcat安装目录下的ROOT下的所有文件全部删除，然后将工程的解压后的文件全部拷进去。</p>
+<p><strong>方法三</strong>：<br>Tomcat5.0以下版本在d:/Tomcat/conf/Catalina/localhost目录下会自动生成了一个ROOT.Xml，<br>但是5.0以上版本不再生成此文件，所以可以新建个ROOT.xml,在里面加入如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> &lt;?Xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos;?&gt;</div><div class="line">  &lt;Context crossContext=&quot;true&quot; docBase=&quot;d:/Tomcat 5.5/webapps/medi&quot; path=&quot;&quot; reloadable=&quot;true&quot;&gt;</div><div class="line">&lt;/Context&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<h5 id="二、Idea运行Tomcat的问题："><a href="#二、Idea运行Tomcat的问题：" class="headerlink" title="二、Idea运行Tomcat的问题："></a>二、Idea运行Tomcat的问题：</h5><p>IDEA运行tomcat时候重新设置了变量，以下是其启动tomcat时候的部分输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Using CATALINA_BASE:   &quot;C:\Users\suyf\.IntelliJIdea2016.3\system\tomcat\Unnamed_ssm_3&quot;</div><div class="line">Using CATALINA_HOME:   &quot;D:\tomcat\apache-tomcat-8.0.36&quot;</div><div class="line">Using CATALINA_TMPDIR: &quot;D:\tomcat\apache-tomcat-8.0.36\temp&quot;</div><div class="line">Using JRE_HOME:        &quot;D:\Java\jre1.8.0&quot;</div><div class="line">Using CLASSPATH:       &quot;D:\tomcat\apache-tomcat-8.0.36\bin\bootstrap.jar;D:\tomcat\apache-tomcat-8.0.36\bin\tomcat-juli.jar&quot;</div></pre></td></tr></table></figure></p>
+<p>我们打开目录C:\Users\suyf.IntelliJIdea2016.3\system\tomcat\Unnamed_ssm_3，可以看到在conf\Catalina\localhost目录里面生成了ROOT.xml文件，使用了上述<strong>修改tomcat主目录的方法三</strong>，内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;Context path=&quot;&quot; docBase=&quot;C:\Users\suyf\IdeaProjects\ssm\target\ssm&quot; /&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tomcat/" rel="tag"># tomcat</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/13/Idea使用/" rel="next" title="idea使用记录">
+                <i class="fa fa-chevron-left"></i> idea使用记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/12/git笔记/" rel="prev" title="git笔记">
+                git笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/7982425"
+               alt="uriboyka" />
+          <p class="site-author-name" itemprop="name">uriboyka</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat目录"><span class="nav-number">1.</span> <span class="nav-text">tomcat目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conf目录"><span class="nav-number">2.</span> <span class="nav-text">conf目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#server-xml配置"><span class="nav-number">3.</span> <span class="nav-text">server.xml配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-xml"><span class="nav-number">4.</span> <span class="nav-text">web.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web应用的目录结构"><span class="nav-number">5.</span> <span class="nav-text">Web应用的目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat8管理页面配置"><span class="nav-number">6.</span> <span class="nav-text">tomcat8管理页面配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat项目部署的三种方式"><span class="nav-number">7.</span> <span class="nav-text">tomcat项目部署的三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat启动脚本"><span class="nav-number">8.</span> <span class="nav-text">tomcat启动脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Idea与Tomcat的配置"><span class="nav-number">9.</span> <span class="nav-text">Idea与Tomcat的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、先说一下与Tomcat相关的两个配置："><span class="nav-number">9.0.1.</span> <span class="nav-text">一、先说一下与Tomcat相关的两个配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、Idea运行Tomcat的问题："><span class="nav-number">9.0.2.</span> <span class="nav-text">二、Idea运行Tomcat的问题：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">uriboyka</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

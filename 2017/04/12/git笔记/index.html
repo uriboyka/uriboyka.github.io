@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="搭建流程 在github上创建仓库 uriboyka.github.io. 创建两个分支：master 与 hexo. 设置 hexo 为默认分支，保存源文件. git clone hexo 分支到本地，执行： 123hexo initnpm installnpm install hexo-deployer-git --save  修改站点目录 _config 中的 deploy 参数，分支为：m">
-<meta name="keywords" content="hexo">
+<meta name="description" content="安装完成后，还需要最后一步设置，在命令行输入：12$ git config --global user.name &amp;quot;Your Name&amp;quot;$ git config --global user.email &amp;quot;email@example.com&amp;quot;   注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github page hexo博客同步源文件与静态文件方法">
-<meta property="og:url" content="http://yoursite.com/2017/04/17/github page hexo博客同步源文件与静态文件方法/index.html">
+<meta property="og:title" content="git笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/git笔记/index.html">
 <meta property="og:site_name" content="Uriboyka's Blog">
-<meta property="og:description" content="搭建流程 在github上创建仓库 uriboyka.github.io. 创建两个分支：master 与 hexo. 设置 hexo 为默认分支，保存源文件. git clone hexo 分支到本地，执行： 123hexo initnpm installnpm install hexo-deployer-git --save  修改站点目录 _config 中的 deploy 参数，分支为：m">
-<meta property="og:updated_time" content="2017-04-17T16:07:39.529Z">
+<meta property="og:description" content="安装完成后，还需要最后一步设置，在命令行输入：12$ git config --global user.name &amp;quot;Your Name&amp;quot;$ git config --global user.email &amp;quot;email@example.com&amp;quot;   注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置">
+<meta property="og:updated_time" content="2017-04-19T12:41:49.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github page hexo博客同步源文件与静态文件方法">
-<meta name="twitter:description" content="搭建流程 在github上创建仓库 uriboyka.github.io. 创建两个分支：master 与 hexo. 设置 hexo 为默认分支，保存源文件. git clone hexo 分支到本地，执行： 123hexo initnpm installnpm install hexo-deployer-git --save  修改站点目录 _config 中的 deploy 参数，分支为：m">
+<meta name="twitter:title" content="git笔记">
+<meta name="twitter:description" content="安装完成后，还需要最后一步设置，在命令行输入：12$ git config --global user.name &amp;quot;Your Name&amp;quot;$ git config --global user.email &amp;quot;email@example.com&amp;quot;   注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/17/github page hexo博客同步源文件与静态文件方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/12/git笔记/"/>
 
 
 
 
 
-  <title> github page hexo博客同步源文件与静态文件方法 | Uriboyka's Blog </title>
+  <title> git笔记 | Uriboyka's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/17/github page hexo博客同步源文件与静态文件方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/git笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="uriboyka">
@@ -281,7 +281,7 @@
             
             
               
-                github page hexo博客同步源文件与静态文件方法
+                git笔记
               
             
           </h1>
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T23:03:30+08:00">
-                2017-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T21:13:21+08:00">
+                2017-04-12
               </time>
             
 
@@ -319,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/GitHub-Pages-博客相关/" itemprop="url" rel="index">
-                    <span itemprop="name">GitHub Pages 博客相关</span>
+                  <a href="/categories/git相关/" itemprop="url" rel="index">
+                    <span itemprop="name">git相关</span>
                   </a>
                 </span>
 
@@ -354,27 +354,71 @@
       
 
       
-        <h3 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h3><ol>
-<li>在github上创建仓库 uriboyka.github.io.</li>
-<li>创建两个分支：master 与 hexo.</li>
-<li>设置 hexo 为默认分支，保存源文件.</li>
-<li><p>git clone hexo 分支到本地，执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-</li>
-<li><p>修改站点目录 _config 中的 deploy 参数，分支为：master</p>
-</li>
-<li><p>依次执行下列命令，提交修改的源文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git commit -m &quot;&quot;</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure>
-</li>
-<li><p>发布网站到 master 分支上：<code>hexo g -d</code></p>
+        <ol>
+<li>安装完成后，还需要最后一步设置，在命令行输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email &quot;email@example.com&quot;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="日常改动流程"><a href="#日常改动流程" class="headerlink" title="日常改动流程"></a>日常改动流程</h3><ol>
-<li><p>将源文件改动推送到github上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git commit -m &quot;&quot;</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure>
+<p>注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置.</p>
+<ol>
+<li><p>创建仓库，通过git init命令把这个目录变成Git可以管理的仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">Initialized empty Git repository in /Users/michael/learngit/.git/</div></pre></td></tr></table></figure>
 </li>
-<li><p>将html文件发布到master分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure>
+<li><p>添加文件到Git仓库，分两步：</p>
+<blockquote>
+<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；<br>第二步，使用命令git commit，完成。</file></p>
+</blockquote>
+</li>
+<li><p>要随时掌握工作区的状态，使用git status命令。<br>如果git status告诉你有文件被修改过，用git diff可以查看修改内容。</p>
+</li>
+<li><p>在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+</li>
+<li><p>版本回退</p>
+<blockquote>
+<p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。<br>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。<br>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
+</blockquote>
+</li>
+<li><p>工作区和暂存区</p>
+<blockquote>
+<p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：<br>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；<br>第二步是用<code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。<br>因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。<br>你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+</blockquote>
+</li>
+<li><p>管理修改,每次修改，如果不add到暂存区，那就不会加入到commit中。</p>
+</li>
+<li><p>撤销修改:</p>
+<ol>
+<li>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</li>
+<li>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>，就回到了场景1，第二步按场景1操作。</li>
+<li>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</li>
+</ol>
+</li>
+<li><p>删除文件，在文件管理器中把没用的文件删了，然后就用命令<code>git rm</code>删掉，并且<code>git commit</code>。</p>
+</li>
+<li><p>添加远程仓库：</p>
+<ol>
+<li>要关联一个远程库，使用命令<code>git remote add origin git@github.com:uriboyka/learngit.git</code>；</li>
+<li>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；</li>
+</ol>
+</li>
+<li><p>Git分支：</p>
+<ul>
+<li>查看分支：<code>git branch</code></li>
+<li>创建分支：<code>git branch &lt;name&gt;</code></li>
+<li>切换分支：<code>git checkout &lt;name&gt;</code></li>
+<li>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></li>
+<li>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></li>
+<li>删除分支：<code>git branch -d &lt;name&gt;</code></li>
+</ul>
+</li>
+<li><p>多人协作：</p>
+<ul>
+<li>查看远程库信息，使用git remote -v；</li>
+<li>本地新建的分支如果不推送到远程，对其他人就是不可见的；</li>
+<li>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</li>
+<li>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</li>
+<li>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</li>
+<li>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</li>
+</ul>
 </li>
 </ol>
 
@@ -406,7 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -419,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/18/android support library关系详解/" rel="next" title="android support library关系详解">
-                <i class="fa fa-chevron-left"></i> android support library关系详解
+              <a href="/2017/04/12/tomcat笔记/" rel="next" title="tomcat笔记">
+                <i class="fa fa-chevron-left"></i> tomcat笔记
               </a>
             
           </div>
@@ -429,8 +473,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/17/理解javascript原型和闭包/" rel="prev" title="理解javascript原型和闭包">
-                理解javascript原型和闭包 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/12/css笔记/" rel="prev" title="css笔记">
+                css笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -478,17 +522,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/7982425"
@@ -550,22 +585,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建流程"><span class="nav-number">1.</span> <span class="nav-text">搭建流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日常改动流程"><span class="nav-number">2.</span> <span class="nav-text">日常改动流程</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
