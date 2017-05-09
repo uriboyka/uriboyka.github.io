@@ -23,7 +23,8 @@ function show(x) {
             console.log(typeof (null));  //object
             console.log(typeof (new Number(10)));  //object
         }
-        show();```
+        show();
+```
 
 * 一切（引用类型）都是对象，对象是属性的集合。
 
