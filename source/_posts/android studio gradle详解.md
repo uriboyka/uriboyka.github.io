@@ -7,7 +7,6 @@ tags:
 categories: android相关
 ---
 
-### gradle版本问题
 1. gradle包的版本,在项目的gradle/wrapper目录下面有个gradle-wrapper.properties中有如下内容：
 `distributionUrl=https\://services.gradle.org/distributions/gradle-2.2.1-all.zip`
     >团队中人员A,B,C，每个人都有自己的电脑和配置，如何能保证A,B,C使用同一个版本得gradle来编译项目呢，gradle wrapper就用来干这个
@@ -20,7 +19,6 @@ categories: android相关
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -33,6 +31,7 @@ categories: android相关
     > Plugin version 2.1.3 - 2.2.3 ----> Gradle version 2.14.1+
     > Plugin version 2.3.0+ ----> Gradle version 3.3+
 
+
 5. 导入其它项目时修改gradle版本问题：
     > 1. 修改gradle插件的版本，在项目根目录下的build.gradle中修改
     > ```
@@ -44,6 +43,7 @@ categories: android相关
     > 2. 修改gradle的版本，在项目的gradle/wrapper目录下面有个gradle-wrapper.properties中修改
     > `distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip`
     > 3. 查看当前系统安装了哪些版本的gradle，`C:\Users\suyf\.gradle\wrapper\dists`
+
 
 6. 手动安装gradle版步骤：
     > 1.下载对应版本的[gradle zip](https://services.gradle.org/distributions)包.
