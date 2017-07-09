@@ -3,7 +3,7 @@ title: java编程思想笔记(下)
 date: 2017-06-8 22:46:20
 tags:
   - java
-categories: java相关
+categories: Java
 ---
 
 ### 11. 通过异常处理错误

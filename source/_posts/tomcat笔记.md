@@ -3,7 +3,7 @@ title: tomcat配置笔记
 date: 2017-04-12 21:23:21
 tags:
   - tomcat
-categories: tomcat相关
+categories: Tomcat
 ---
 
 ### tomcat目录

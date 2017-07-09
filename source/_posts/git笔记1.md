@@ -1,9 +1,9 @@
 ---
-title: git笔记
+title: git笔记1
 date: 2017-04-12 21:13:21
 tags:
   - git
-categories: git相关
+categories: Git
 ---
 
 1. 安装完成后，还需要最后一步设置，在命令行输入：

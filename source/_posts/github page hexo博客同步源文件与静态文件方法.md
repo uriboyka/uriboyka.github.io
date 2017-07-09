@@ -2,9 +2,12 @@
 title: github page hexo博客同步源文件与静态文件方法
 date: 2017-04-17 23:03:30
 tags:
+  - git
   - hexo
-categories: GitHub Pages 博客相关
+categories: Git
 ---
+
+
 ### 搭建流程
 1. 在github上创建仓库 uriboyka.github.io.
 2. 创建两个分支：master 与 hexo.

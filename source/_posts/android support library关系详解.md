@@ -3,7 +3,7 @@ title: android support library关系详解
 date: 2017-04-18 18:41:59
 tags:
   - android
-categories: android相关
+categories: Android
 ---
 
 ### 安卓官方为什么要提供支持包？

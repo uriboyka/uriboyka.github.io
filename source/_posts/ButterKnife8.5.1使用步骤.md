@@ -1,3 +1,13 @@
+---
+title: ButterKnife8.5.1使用步骤
+date: 2017-06-12 20:23:21
+tags:
+  - android
+  - butterknife
+categories: Android
+---
+
+
 ### 在根目录build.gradle添加如下代码
 ```
 buildscript {

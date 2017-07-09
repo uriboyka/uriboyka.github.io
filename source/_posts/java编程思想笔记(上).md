@@ -1,9 +1,9 @@
 ---
-title: java编程思想笔记
+title: java编程思想笔记(上)
 date: 2017-04-19 22:19:20
 tags:
   - java
-categories: java相关
+categories: Java
 ---
 
 ### 1. 一切都是对象

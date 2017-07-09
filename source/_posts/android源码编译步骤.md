@@ -3,8 +3,8 @@ title: android源码编译步骤
 date: 2017-05-8 18:41:59
 tags:
   - android
-  - 源码分析
-categories: android相关
+  - aosp
+categories: Android
 ---
 
 ### android源码编译环境

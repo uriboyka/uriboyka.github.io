@@ -3,7 +3,7 @@ title: atom使用记录
 date: 2017-04-13 19:23:21
 tags:
   - atom
-categories: atom相关
+categories: 开发工具
 ---
 
 ### 常用操作

@@ -3,7 +3,7 @@ title: git遇到的问题
 date: 2017-04-19 21:13:21
 tags:
   - git
-categories: git相关
+categories: Git
 ---
 
 1. github push 提交代码时停止在writing objects怎么办？

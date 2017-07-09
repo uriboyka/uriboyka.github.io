@@ -3,7 +3,7 @@ title: idea使用记录
 date: 2017-04-13 19:23:21
 tags:
   - idea
-categories: idea相关
+categories: 开发工具
 ---
 
 1. Idea 把"Mark Directory As..."的文件夹都加入CLASSPATH。

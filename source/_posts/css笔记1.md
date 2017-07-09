@@ -1,9 +1,9 @@
 ---
-title: css笔记
+title: css笔记1
 date: 2017-04-12 20:23:21
 tags:
   - css
-categories: css相关
+categories: CSS
 ---
 
 1. CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明：

@@ -1,3 +1,11 @@
+---
+title: hexo搭建记录
+date: 2017-04-17 23:03:30
+tags:
+  - hexo
+categories: Git
+---
+
 ### 安装配置hexo
 1. 下载安装hexo
     ```

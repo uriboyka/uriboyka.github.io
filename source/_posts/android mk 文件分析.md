@@ -3,8 +3,8 @@ title: android.mk文件分析
 date: 2017-04-17 22:41:59
 tags:
   - android
-  - 源码分析
-categories: android相关
+  - aosp
+categories: Android
 ---
 
 ### android 抽像 Makefile 语法，分三步：

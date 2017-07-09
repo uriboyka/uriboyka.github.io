@@ -4,7 +4,7 @@ date: 2017-04-17 22:41:59
 tags:
   - javascript
   - 闭包
-categories: JavaScript相关
+categories: JavaScript
 ---
 
 * 值类型的类型判断用typeof，引用类型的类型判断用instanceof：

@@ -4,7 +4,7 @@ date: 2017-04-15 19:41:59
 tags:
   - android
   - gradle
-categories: android相关
+categories: Android
 ---
 
 1. gradle包的版本,在项目的gradle/wrapper目录下面有个gradle-wrapper.properties中有如下内容：
